@@ -11,7 +11,7 @@ namespace UnitConverter.Tests
         {
             var unitConverter = new UnitConverterService();
 
-            var inches = unitConverter.ConvertInchesToCM(1);
+            var inches = unitConverter.ConvertInchesCM(1, "in");
 
             Assert.Equal(2.54, inches);
         }
@@ -21,7 +21,7 @@ namespace UnitConverter.Tests
         {
             var unitConverter = new UnitConverterService();
 
-            var cm = unitConverter.ConvertCMToInches(1);
+            var cm = unitConverter.ConvertInchesCM(1, "cm");
 
             Assert.Equal(0.39, cm);
         }
@@ -31,7 +31,7 @@ namespace UnitConverter.Tests
         {
             var unitConverter = new UnitConverterService();
 
-            var meter = unitConverter.ConvertYardToMeter(1);
+            var meter = unitConverter.ConvertYardMeter(1, "y");
 
             Assert.Equal(0.92, meter);
         }
@@ -41,29 +41,9 @@ namespace UnitConverter.Tests
         {
             var unitConverter = new UnitConverterService();
 
-            var yard = unitConverter.ConvertMeterToYard(1);
+            var yard = unitConverter.ConvertYardMeter(1, "meter");
 
             Assert.Equal(1.09, yard);
-        }
-
-        [Fact]
-        public void MilesToKM()
-        {
-            var unitConverter = new UnitConverterService();
-
-            var km = unitConverter.ConvertMilesToKM(1);
-
-            Assert.Equal(1.61, km);
-        }
-
-        [Fact]
-        public void KMToMiles()
-        {
-            var unitConverter = new UnitConverterService();
-
-            var miles = unitConverter.ConvertKMToMiles(1);
-
-            Assert.Equal(0.62, miles);
         }
     }
 }
